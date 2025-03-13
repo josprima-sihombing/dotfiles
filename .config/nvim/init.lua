@@ -398,6 +398,14 @@ require("lazy").setup({
 				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 				--   },
 				-- },
+				defaults = {
+					-- mappings = {
+					--   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+					-- },
+					file_ignore_patterns = {
+						"node_modules",
+					},
+				},
 				pickers = {
 					buffers = {
 						initial_mode = "normal",
