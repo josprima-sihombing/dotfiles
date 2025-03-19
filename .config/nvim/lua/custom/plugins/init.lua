@@ -19,14 +19,6 @@ return {
 		},
 	},
 	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		events = "VeryLazy",
-		config = function()
-			require("lualine").setup()
-		end,
-	},
-	{
 		"vimpostor/vim-tpipeline",
 		config = function()
 			vim.g.tpipeline_autoembed = 1
