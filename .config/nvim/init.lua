@@ -1037,8 +1037,29 @@ require("lazy").setup({
 				dependencies = { "nvim-tree/nvim-web-devicons" },
 				sections = {
 					lualine_a = { "mode" },
-					lualine_b = { "branch", "diff", "diagnostic" },
-					lualine_c = { "filename" },
+					lualine_b = {
+						{
+							"branch",
+							fmt = function(branch_name)
+								local max_branch_name_length = 20
+								if #branch_name > max_branch_name_length then
+									return branch_name:sub(1, max_branch_name_length) .. "..."
+								end
+
+								return branch_name
+							end,
+						},
+						"diff",
+						{
+							"diagnostics",
+						},
+					},
+					lualine_c = {
+						{
+							"filename",
+							path = 4,
+						},
+					},
 					lualine_x = { "filetype" },
 					lualine_y = { "progress" },
 					lualine_z = { "location" },
