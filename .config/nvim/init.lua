@@ -156,6 +156,11 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt.shiftwidth = 2 -- Number of spaces for each indentation level
+vim.opt.tabstop = 2 -- Number of spaces per tab characters
+vim.opt.softtabstop = 2 -- Number of spaces when pressing <Tab>
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -791,6 +796,8 @@ require("lazy").setup({
 				--
 				-- You can use 'stop_after_first' to run the first available formatter from the list
 				-- javascript = { "prettierd", "prettier", stop_after_first = true },
+				typescript = { "eslint" },
+				typescriptreact = { "eslint" },
 			},
 		},
 	},
