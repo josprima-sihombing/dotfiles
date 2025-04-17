@@ -144,7 +144,7 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
@@ -407,9 +407,6 @@ require("lazy").setup({
 					-- mappings = {
 					--   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 					-- },
-					file_ignore_patterns = {
-						"node_modules",
-					},
 				},
 				pickers = {
 					buffers = {
@@ -418,6 +415,27 @@ require("lazy").setup({
 					lsp_references = {
 						initial_mode = "normal",
 					},
+					find_files = {
+						find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
+					},
+					grep_string = {
+						additional_args = { "--hidden" },
+					},
+					live_grep = {
+						additional_args = { "--hidden", "--iglob", "!.git" },
+					},
+					-- find_files = {
+					-- 	find_command = {
+					-- 		"rg",
+					-- 		"--files",
+					-- 		"--hidden",
+					-- 		"--no-ignore-vcs",
+					-- 		"-g",
+					-- 		"!**/.git/*",
+					-- 		"-g",
+					-- 		"!**/node_modules/*",
+					-- 	},
+					-- },
 				},
 				extensions = {
 					["ui-select"] = {
