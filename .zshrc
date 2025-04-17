@@ -1,7 +1,3 @@
-# Enable completion system
-autoload -Uz compinit
-compinit
-
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH=$PATH:/usr/local/go/bin
 
@@ -19,6 +15,11 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
