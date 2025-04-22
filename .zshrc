@@ -21,7 +21,16 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+autoload -Uz compinit
+compinit
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+bindkey "${key[Up]}" history-substring-search-up
+bindkey "${key[Down]}" history-substring-search-down
 
 eval "$(starship init zsh)"
