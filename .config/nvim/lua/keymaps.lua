@@ -34,3 +34,7 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("n", "<leader>e", function()
 	vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
 end, { desc = "Show diagnostics in floating window" })
+
+vim.keymap.set("n", "<leader>ho", function()
+	require("gitlinker").get_buf_range_url("n", { action_callback = require("gitlinker.actions").open_in_browser })
+end, { desc = "Open GitHub link to current line" })
