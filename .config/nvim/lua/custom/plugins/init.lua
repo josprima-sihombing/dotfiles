@@ -64,4 +64,8 @@ return {
 			})
 		end,
 	},
+	{
+		"Exafunction/windsurf.vim",
+		event = "BufEnter",
+	},
 }
