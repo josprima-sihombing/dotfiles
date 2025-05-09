@@ -68,4 +68,11 @@ return {
 		"Exafunction/windsurf.vim",
 		event = "BufEnter",
 	},
+	{
+		"tpope/vim-fugitive",
+		cmd = {
+			"Git",
+			"G",
+		},
+	},
 }

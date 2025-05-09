@@ -870,6 +870,15 @@ require("lazy").setup({
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
+			local function recording_status()
+				local reg = vim.fn.reg_recording()
+				if reg == "" then
+					return ""
+				end
+
+				return "Recording @" .. reg
+			end
+
 			require("lualine").setup({
 				options = {
 					theme = "catppuccin",
@@ -901,6 +910,12 @@ require("lazy").setup({
 						{
 							"filename",
 							path = 4,
+						},
+						{
+							recording_status,
+							color = {
+								fg = "#f44747",
+							},
 						},
 					},
 					lualine_x = { "filetype" },
